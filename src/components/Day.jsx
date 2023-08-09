@@ -38,7 +38,6 @@ export default function Day({day}) {
         })
     }
     const doesEventStart = ()=>{
-        setStarts([])
         eventList.map((data)=>{
             if(data.date === day.format("DD-MM-YYYY")){
                 addToStart(data)
@@ -46,8 +45,9 @@ export default function Day({day}) {
         })
     }
     useEffect(()=>{
+        setStarts([])
         doesEventStart()
-    },[eventList])
+    },[eventList, day])
     const handleDrag = (i) => {
         deleteEvents(start[i].id)
         setCurrentDrag({

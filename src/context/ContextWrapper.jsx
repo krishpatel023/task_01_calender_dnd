@@ -54,10 +54,32 @@ export default function ContextWrapper(props) {
         },
         {   
             id: 3,
-            date : dayjs(today).dayOfYear(curr -25).format('DD-MM-YYYY'),
+            date : dayjs(today).dayOfYear(curr - 25).format('DD-MM-YYYY'),
             name : "Assignment Submission"
         }
     ])
+    // const [eventList, setEventList] = useState([
+    //     {   
+    //         id: 1,
+    //         date : "08-08-2023",
+    //         name : "Student Fest"
+    //     },
+    //     {   
+    //         id: 4,
+    //         date : "09-08-2023",
+    //         name : "Student Fest"
+    //     },
+    //     {   
+    //         id: 2,
+    //         date : "10-08-2023",
+    //         name : "Student Fest"
+    //     },
+    //     {   
+    //         id: 3,
+    //         date : "17-08-2023",
+    //         name : "Assignment Submission"
+    //     }
+    // ])
     const addEvents = (item) => setEventList((tasks) => [...tasks, item]);
     const deleteEvents = (id) => setEventList((tasks) => tasks.filter((item) => item.id !== id));
     const value = {
